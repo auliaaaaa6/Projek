@@ -10,6 +10,10 @@ public class ManajemenMobil {
         mobil.add(new Mobil("Honda", "Merah", "D 1111 EF", 2020, "Manual"));
     }
 
+     public Mobil getMobilRental() {
+        return mobil.get(0); 
+    }
+
      public void inputDataMobil() {
         Scanner input = new Scanner (System.in);
         System.out.println("\n=== Tambah Data Mobil ===");
@@ -81,4 +85,5 @@ public class ManajemenMobil {
         mobil.removeIf(m -> m.getNoPlat().equalsIgnoreCase(cari));
         System.out.println("Data terhapus.");
     } 
+
 }
