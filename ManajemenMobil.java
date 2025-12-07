@@ -6,12 +6,22 @@ public class ManajemenMobil {
      ArrayList<Mobil> mobil = new ArrayList<>();
 
      public ManajemenMobil() {
-        mobil.add(new Mobil("Toyota", "Hitam", "B 1234 CD", 2018, "Automatic"));
-        mobil.add(new Mobil("Honda", "Merah", "D 1111 EF", 2020, "Manual"));
+        mobil.add(new Mobil("Toyota", "Hitam", "N 1234 CD", 2018, "Automatic"));
+        mobil.add(new Mobil("Honda HRV", "Merah", "N 1111 EF", 2020, "Manual"));
+        mobil.add(new Mobil("Mazda", "Putih", "L 6789 XYZ", 2023, "Automatic" ));
     }
-
-     public Mobil getMobilRental() {
+    // Mobil Sewa
+    public Mobil getMobilTravel() {
         return mobil.get(0); 
+    }
+    // Mobil Rental
+     public Mobil getMobilRental(String merk) {
+        for (Mobil m : mobil) {
+        if (m.getMerk().equalsIgnoreCase(merk)) {
+            return m;
+        }
+    }
+    return null; 
     }
 
      public void inputDataMobil() {
@@ -44,7 +54,7 @@ public class ManajemenMobil {
 
         for (Mobil m : mobil) {
             m.menampilkanData();
-            System.out.println("-----------------------------------");
+            System.out.println("---------------------------");
         } 
     }
 
@@ -85,5 +95,4 @@ public class ManajemenMobil {
         mobil.removeIf(m -> m.getNoPlat().equalsIgnoreCase(cari));
         System.out.println("Data terhapus.");
     } 
-
 }
