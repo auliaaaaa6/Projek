@@ -67,7 +67,7 @@ public class Main {
     }
     
     // ================== MENU MOBIL ===================
-    ManajemenMobil mb = new ManajemenMobil();
+    ManajemenMobil mm = new ManajemenMobil();
     public void menuMobil() {
         int pilih;
 
@@ -84,10 +84,10 @@ public class Main {
             input.nextLine();
 
             switch (pilih) {
-                case 1 -> mb.inputDataMobil();
-                case 2 -> mb.menampilkanDataMobil();
-                case 3 -> mb.editDataMobil();
-                case 4 -> mb.deleteDataMobil();
+                case 1 -> mm.inputDataMobil();
+                case 2 -> mm.menampilkanDataMobil();
+                case 3 -> mm.editDataMobil();
+                case 4 -> mm.deleteDataMobil();
             }
 
         } while (pilih != 5);
