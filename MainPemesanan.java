@@ -6,6 +6,8 @@ public class MainPemesanan {
     Scanner input = new Scanner (System.in);
     int pilih;
 
+    ManajemenMobil mm = new ManajemenMobil();
+    RentalCar rental = new RentalCar(mm);
     do {
         System.out.println("===== Menu =====");
         System.out.println("1. Pesan Travel");
@@ -16,15 +18,13 @@ public class MainPemesanan {
 
         switch (pilih) {
             case 1:
-            ManajemenMobil mm = new ManajemenMobil();
-            Mobil mobilDefault = mm.getMobilRental();
+            Mobil mobilDefault = mm.getMobilTravel();
             Travel t = new Travel();
             t.setMobil(mobilDefault);
             t.pesanTravel();
             break;
             case 2:
-            RentalCar r = new RentalCar();
-            r.sewaMobil();
+            rental.sewaMobil();
             break;
             case 3:
             System.out.println("Terima Kasih");
